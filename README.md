@@ -1,16 +1,58 @@
-# flutter_application_1
+# Add_To_Cart-With-Local-Database-
 
-A new Flutter project.
+A shopping cart built around `sqflite`, so the basket survives app restarts.
+
+## Highlights
+
+- Persistent cart — every item is written to SQLite, so the basket is restored on relaunch.
+- Provider for reactive state, with a live badge count that updates as the cart changes.
+- Clean separation of concerns across `Database`, `Model`, `Provider` and `Screen`.
+
+## Tech Stack
+
+| Concern | Choice |
+|---|---|
+| UI | Flutter, Material |
+| State management | `provider` |
+| Persistence | `sqflite`, `path_provider` |
+| Utilities | `shared_preferences`, `badges` |
+
+## Project Structure
+
+```
+lib/
+- `Database`
+- `Model`
+- `Provider`
+- `Screen`
+```
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter `>= 3.16` (Dart `>= 3.2`)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Run
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+git clone https://github.com/developer-rahim/Add_To_Cart-With-Local-Database-.git
+cd Add_To_Cart-With-Local-Database-
+flutter pub get
+flutter run
+```
+
+### Test
+
+```bash
+flutter test
+flutter analyze
+```
+
+## Notes
+
+The cart badge count is driven by Provider, so any screen can react to cart changes without manual refreshes.
+
+## License
+
+Released under the MIT License.
